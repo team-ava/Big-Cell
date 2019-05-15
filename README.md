@@ -1,6 +1,6 @@
 # Big-Cell
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee25d75f16be464ca85aa0678069cfb4)](https://www.codacy.com/app/Andersontno/Big-Cell?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=team-ava/Big-Cell&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee25d75f16be464ca85aa0678069cfb4)](https://www.codacy.com/app/Team-AVA/Big-Cell?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=team-ava/Big-Cell&amp;utm_campaign=Badge_Grade)
 
 ## Informações do nosso time:
 
@@ -9,7 +9,7 @@
 
 **Integrantes:**
 
-[![Anderson G.](https://avatars1.githubusercontent.com/u/30607467?s=64&v=4)](https://github.com/Andersontno) |  [![André B.](https://avatars0.githubusercontent.com/u/30611019?s=400&v=4)](https://github.com/cupcakebr) |  [![Victor R.](https://avatars1.githubusercontent.com/u/40237458?s=400&v=4)](https://github.com/VictorRaffaele)
+[![Anderson G.](https://avatars0.githubusercontent.com/u/30607467?s=64&v=4)](https://github.com/Andersontno) |  [![André B.](https://avatars1.githubusercontent.com/u/30611019?s=64&v=4)](https://github.com/cupcakebr) |  [![Victor R.](https://avatars0.githubusercontent.com/u/40237458?s=64&v=4)](https://github.com/VictorRaffaele)
 |-------------------|-------------------|-------------------|
 | Anderson G. | André B. | Victor R. |
 | [@Andersontno](https://github.com/Andersontno) | [@cupcakebr](https://github.com/cupcakebr) | [@VictorRaffaele](https://github.com/VictorRaffaele) | 
