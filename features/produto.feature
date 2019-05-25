@@ -1,15 +1,15 @@
-Feature: Estoque
+Feature: Produto
     As an administrador do sistema Big-Cell
-    I want to adicionar, alterar e ver um produto no estoque
+    I want to adicionar, alterar e ver um produto
     so that irei testar essas funções automaticamente
 
-Scenario: adicionar produto no estoque
+Scenario: adicionar produto
     Given Eu abro a pagina inicial do estoque
     And Eu clico no botao adicinar produto
     When Eu crio o produto com nome "Xiaomi Mi 8 lite" com quantidade "0" e com preço "1000.00"
     Then Eu vejo que o produto de nome "Xiaomi Mi 8 lite" foi salvo
 
-Scenario: alterar produto no estoque
+Scenario: alterar produto
     Given Eu abro a pagina inicial do estoque
     And Eu vejo o produto com nome "Xiaomi Mi 8 lite"
     When Eu clico no nome "Xiaomi Mi 8 lite"
@@ -17,7 +17,7 @@ Scenario: alterar produto no estoque
     Then Eu altero o preco "1000.0" para "1100.0"
     And Eu vejo uma mensagem de que "Alteracao salva"
 
-Scenario: remover produto no estoque
+Scenario: remover produto
     Given Eu abro a pagina inicial do estoque 
     And Eu vejo o produto com nome "Xiaomi Mi 8 lite"
     When Eu clico no nome "Xiaomi Mi 8 lite"
