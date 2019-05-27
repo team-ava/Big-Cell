@@ -16,7 +16,7 @@ Scenario: editar produto
 
 Scenario: remover produto
     Given Eu abro a pagina de informacoes do produto
-    When Eu seleciono a opcao de remover do produto "Xiomi Mi 8 Lite"
+    When Eu seleciono a opcao de remover do produto "Xiaomi Mi 8 Lite"
     Then Eu vejo uma mensagem de que o produto foi removido com sucesso
 
 Scenario: adicionar produto com espaço nao preenchido
