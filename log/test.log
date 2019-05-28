@@ -1,0 +1,1483 @@
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (127.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (167.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProdutos (20190525055738)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "preco" float, "tipo" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190525055738"]]
+  [1m[35m (77.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClientes (20190525063154)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "fone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190525063154"]]
+  [1m[35m (83.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (28.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-05-27 22:32:20.938174"], ["updated_at", "2019-05-27 22:32:20.938174"]]
+  [1m[35m (88.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:32:30 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (19.0ms)
+Completed 200 OK in 149ms (Views: 125.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:32:30 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:33:40 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (143.4ms)
+  Rendered clientes/new.html.erb (155.4ms)
+Completed 200 OK in 211ms (Views: 187.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:33:40 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:33:40 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:33:40 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (2.0ms)
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:33:40 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:34:17 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (15.0ms)
+  Rendered clientes/new.html.erb (27.0ms)
+Completed 200 OK in 85ms (Views: 60.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:34:17 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:34:17 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:34:17 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:34:17 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:38:41 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (27.9ms)
+Completed 200 OK in 85ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:38:41 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:38:41 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (3.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:38:41 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:38:41 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:41:01 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (15.0ms)
+  Rendered clientes/new.html.erb (26.9ms)
+Completed 200 OK in 106ms (Views: 59.6ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:41:01 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:41:01 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:41:01 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:41:01 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:41:32 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (28.9ms)
+Completed 200 OK in 87ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:41:33 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:41:33 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:41:33 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:41:33 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:44:34 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (27.9ms)
+Completed 200 OK in 86ms (Views: 61.4ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:44:34 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:44:34 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:44:34 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:44:34 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:46:12 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (17.0ms)
+  Rendered clientes/new.html.erb (28.0ms)
+Completed 200 OK in 86ms (Views: 60.4ms | ActiveRecord: 0.9ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 19:46:12 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 22:46:12.690823"], ["updated_at", "2019-05-27 22:46:12.690823"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 23ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 22:46:21.695890"], ["updated_at", "2019-05-27 22:46:21.695890"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 22:46:21.725810"], ["updated_at", "2019-05-27 22:46:21.725810"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 15ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:46:21 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:56:58 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (15.9ms)
+  Rendered clientes/new.html.erb (27.9ms)
+Completed 200 OK in 87ms (Views: 62.5ms | ActiveRecord: 1.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 19:56:58 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 22:56:58.904540"], ["updated_at", "2019-05-27 22:56:58.904540"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 22:57:07.665191"], ["updated_at", "2019-05-27 22:57:07.665191"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 2.9ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (6.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (3.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 22:57:07.701095"], ["updated_at", "2019-05-27 22:57:07.701095"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 19:57:07 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:02:57 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (26.9ms)
+Completed 200 OK in 86ms (Views: 60.9ms | ActiveRecord: 1.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:02:58 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:02:58.013499"], ["updated_at", "2019-05-27 23:02:58.013499"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:03:06.507826"], ["updated_at", "2019-05-27 23:03:06.507826"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 3.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:03:06.535558"], ["updated_at", "2019-05-27 23:03:06.535558"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:03:06 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:22:05 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (28.0ms)
+Completed 200 OK in 85ms (Views: 60.7ms | ActiveRecord: 1.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:22:05 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:22:05.870392"], ["updated_at", "2019-05-27 23:22:05.870392"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:22:14.339409"], ["updated_at", "2019-05-27 23:22:14.339409"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (81.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:22:14.442845"], ["updated_at", "2019-05-27 23:22:14.442845"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 12ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:22:14 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:29:00 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (28.9ms)
+Completed 200 OK in 89ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:29:01 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:29:01.077102"], ["updated_at", "2019-05-27 23:29:01.077102"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (25.8ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:29:09.917315"], ["updated_at", "2019-05-27 23:29:09.917315"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 28ms (ActiveRecord: 25.8ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:29:09.970032"], ["updated_at", "2019-05-27 23:29:09.970032"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:29:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:29:10 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:29:10.004517"], ["updated_at", "2019-05-27 23:29:10.004517"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:29:10 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:29:10 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:34:01 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (15.0ms)
+  Rendered clientes/new.html.erb (27.9ms)
+Completed 200 OK in 85ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:34:01 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:34:01.441730"], ["updated_at", "2019-05-27 23:34:01.441730"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (2.0ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.1ms)
+  Rendered clientes/new.html.erb (1.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:34:09.911741"], ["updated_at", "2019-05-27 23:34:09.911741"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:34:09.941662"], ["updated_at", "2019-05-27 23:34:09.941662"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:34:09.976646"], ["updated_at", "2019-05-27 23:34:09.976646"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:34:09 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:34:10 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:48:10 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (17.0ms)
+  Rendered clientes/new.html.erb (27.9ms)
+Completed 200 OK in 86ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:48:10 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:48:10.691201"], ["updated_at", "2019-05-27 23:48:10.691201"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:48:19.225561"], ["updated_at", "2019-05-27 23:48:19.225561"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:48:19.259495"], ["updated_at", "2019-05-27 23:48:19.259495"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 3.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:48:19.295426"], ["updated_at", "2019-05-27 23:48:19.295426"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 1.9ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:48:19 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:54:20 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (28.0ms)
+Completed 200 OK in 87ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:54:21 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:54:21.076113"], ["updated_at", "2019-05-27 23:54:21.076113"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:54:29.721271"], ["updated_at", "2019-05-27 23:54:29.721271"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Vi", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Vi"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:54:29.748875"], ["updated_at", "2019-05-27 23:54:29.748875"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-27 23:54:29.784766"], ["updated_at", "2019-05-27 23:54:29.784766"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (2.0ms)
+Completed 200 OK in 14ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/edit.html.erb (2.0ms)
+Completed 200 OK in 15ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started PATCH "/clientes/1" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Luis", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Update Cliente", "id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "clientes" SET "nome" = ?, "updated_at" = ? WHERE "clientes"."id" = ?[0m  [["nome", "Luis"], ["updated_at", "2019-05-27 23:54:29.830644"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 20:54:29 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 21:02:25 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (16.0ms)
+  Rendered clientes/new.html.erb (27.9ms)
+Completed 200 OK in 86ms (Views: 60.7ms | ActiveRecord: 1.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 21:02:25 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-28 00:02:25.218097"], ["updated_at", "2019-05-28 00:02:25.218097"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor Raffaele", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor Raffaele"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-28 00:02:33.685154"], ["updated_at", "2019-05-28 00:02:33.685154"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (3.0ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (8.9ms)
+  Rendered clientes/new.html.erb (8.9ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (1.0ms)
+  Rendered clientes/new.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Victor", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor"], ["cpf", "102.209.194-88"], ["fone", "83995369280"], ["created_at", "2019-05-28 00:02:33.743014"], ["updated_at", "2019-05-28 00:02:33.743014"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 3ms (ActiveRecord: 3.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/edit.html.erb (3.0ms)
+Completed 200 OK in 15ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started PATCH "/clientes/1" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Luis", "cpf"=>"102.209.194-88", "fone"=>"83995369280"}, "commit"=>"Update Cliente", "id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "clientes" SET "nome" = ?, "updated_at" = ? WHERE "clientes"."id" = ?[0m  [["nome", "Luis"], ["updated_at", "2019-05-28 00:02:33.790325"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2019-05-27 21:02:33 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (1.0ms)
+Completed 200 OK in 1ms (Views: -0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
