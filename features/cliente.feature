@@ -4,30 +4,30 @@ Feature: CRUD Cliente
   So that um cadastro de cliente e realizado
 
   Scenario: cadastrar cliente
-    Given Eu abro a pagina inicial para cadastro de cliente
-    When Eu crio o cliente "Victor Raffaele" com seus respectivos dados
-    Then Eu vejo que o cadastro de "Victor" foi realizado
+    Given Eu abro a pagina de cadastro de cliente
+    When Eu cadastrado o cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    Then Eu vejo que o cliente foi cadastrado com sucesso
 
 
   Scenario: cadastrar cliente existente
-    Given Eu abro a pagina para cadastro de cliente
-    When Eu crio um cliente com nome "Victor" com seus respectivos dados
-    Then Eu vejo uma mensagem de erro informando que o "CPF" passado ja esta cadastrado
+    Given Eu abro a pagina de cadastro de cliente
+    When Eu cadastrado o cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    Then Eu vejo uma mensagem informando que o cliente ja foi cadastrado
 
 
   Scenario: cadastrar cliente invalido
     Given Eu abro a pagina de cadastro de cliente
-    When Eu crio um cliente de nome menor que 3 caracteres
-    Then Eu vejo que o usuario nao foi criado seguido de uma mensagem de erro
+    When Eu cadastrado o cliente com nome "Vi", cpf "102.209.194-88" e telefone "83995369280"
+    Then Eu vejo que o nome do cliente estar incorreto
 
 
   Scenario: alterar dados cliente
-    Given Eu abro a pagina de edicao de cadastro
-    When Eu procuro o cliente "Victor" e altero seu endereco
-    Then Eu vejo que os dados foram alterados e a operacao concluida
+    Given Eu abro a pagina de informacao de cliente
+    When Eu seleciono a opcao de editar o cliente com nome "Victor Raffaele" e cpf "102.209.194-88"
+    Then Eu vejo que os dados foram alterados com sucesso
 
 
   Scenario:  remover cadastro inexistente
-    Given Eu abro a pagina de remocao de cadastro
-    When Eu procuro remover o cadastro de "Andre"
-    Then Eu vejo uma mensagem de erro impedindo a remocao de "Andre" pois nao existe
+    Given Eu abro a pagina de informacao de cliente
+    When Eu seleciono a opcao remover o cliente "Andre" e cpf "106.698.824-29"
+    Then Eu vejo uma mensagem informando que o cliente nao existe
