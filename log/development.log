@@ -1,0 +1,631 @@
+Started GET "/cliente" for 127.0.0.1 at 2019-05-25 03:33:11 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (120.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (102.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProdutos (20190525055738)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "preco" float, "tipo" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190525055738"]]
+  [1m[35m (127.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClientes (20190525063154)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "fone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190525063154"]]
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-25 06:34:40.806627"], ["updated_at", "2019-05-25 06:34:40.806627"]]
+  [1m[35m (78.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cliente" for 127.0.0.1 at 2019-05-25 03:34:49 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cliente"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/clientes" for 127.0.0.1 at 2019-05-25 03:34:56 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.1ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (3.5ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 03:13:21 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 82ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 03:13:30 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 63ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos" for ::1 at 2019-05-27 03:13:47 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  Rendered produtos/index.html.erb (5.0ms)
+Completed 200 OK in 94ms (Views: 52.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/produtos/new" for ::1 at 2019-05-27 03:13:48 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb
+  Rendered produtos/_form.html.erb (27.0ms)
+  Rendered produtos/new.html.erb (50.9ms)
+Completed 200 OK in 125ms (Views: 99.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/produtos" for ::1 at 2019-05-27 03:13:58 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rh/DLWP7dWVxUb7c6tQ5KmLWKDXsfIlsNBOmMyar6PqdvjoFIEQ6vAmba10/exTGnIffz8tk+Kxu7/Mf6BRN5A==", "produto"=>{"nome"=>"oi", "preco"=>"25", "tipo"=>"Cel", "quantidade"=>"25"}, "commit"=>"Create Produto"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "preco", "tipo", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "oi"], ["preco", 25.0], ["tipo", "Cel"], ["quantidade", 25], ["created_at", "2019-05-27 06:13:58.414573"], ["updated_at", "2019-05-27 06:13:58.414573"]]
+  [1m[35m (151.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/produtos/1
+Completed 302 Found in 165ms (ActiveRecord: 154.1ms)
+
+
+Started GET "/produtos/1" for ::1 at 2019-05-27 03:13:58 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering produtos/show.html.erb
+  Rendered produtos/show.html.erb (2.0ms)
+Completed 200 OK in 78ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos" for ::1 at 2019-05-27 03:14:00 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  Rendered produtos/index.html.erb (3.0ms)
+Completed 200 OK in 75ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos/1" for ::1 at 2019-05-27 03:14:01 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (1.0ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering produtos/show.html.erb
+  Rendered produtos/show.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 48.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/produtos" for ::1 at 2019-05-27 03:14:02 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  Rendered produtos/index.html.erb (5.0ms)
+Completed 200 OK in 65ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos/1" for ::1 at 2019-05-27 03:14:07 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering produtos/show.html.erb
+  Rendered produtos/show.html.erb (1.0ms)
+Completed 200 OK in 68ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos" for ::1 at 2019-05-27 03:14:08 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  Rendered produtos/index.html.erb (3.0ms)
+Completed 200 OK in 67ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos/1/edit" for ::1 at 2019-05-27 03:14:09 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (0.0ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering produtos/edit.html.erb
+  Rendered produtos/_form.html.erb (3.0ms)
+  Rendered produtos/edit.html.erb (16.0ms)
+Completed 200 OK in 88ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos" for ::1 at 2019-05-27 03:14:10 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb
+  [1m[36mProduto Load (1.0ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  Rendered produtos/index.html.erb (4.0ms)
+Completed 200 OK in 72ms (Views: 56.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-05-27 16:45:42 -0300
+Started GET "/" for ::1 at 2019-05-27 16:45:45 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-05-27 19:36:51 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 102ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 19:36:59 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 64ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 19:37:23 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.9ms)
+Completed 200 OK in 77ms (Views: 52.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 19:37:24 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (24.5ms)
+  Rendered clientes/new.html.erb (37.5ms)
+Completed 200 OK in 100ms (Views: 83.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/clientes" for ::1 at 2019-05-27 19:37:39 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UZOaD3XcP/GGCEo2O6iwg37cc3A2WFfYqRRya9uvx6SQ6qPHadUZYCU1BGyOSobsrYHdZV53d1WNHGGZh23YSA==", "cliente"=>{"nome"=>"Victor", "cpf"=>"102.209.194-88", "fone"=>"81995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Victor"], ["cpf", "102.209.194-88"], ["fone", "81995369280"], ["created_at", "2019-05-27 22:37:39.800336"], ["updated_at", "2019-05-27 22:37:39.800336"]]
+  [1m[35m (124.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/1
+Completed 302 Found in 133ms (ActiveRecord: 125.2ms)
+
+
+Started GET "/clientes/1" for ::1 at 2019-05-27 19:37:39 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 144ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 19:43:39 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (5.0ms)
+Completed 200 OK in 67ms (Views: 51.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 19:43:40 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (14.7ms)
+Completed 200 OK in 71ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/1/edit" for ::1 at 2019-05-27 19:52:20 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/edit.html.erb (15.0ms)
+Completed 200 OK in 77ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/1/edit" for ::1 at 2019-05-27 20:31:31 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/edit.html.erb (16.0ms)
+Completed 200 OK in 76ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/clientes/1" for ::1 at 2019-05-27 20:32:14 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C5zjtQmIMR84LOtP2Il1FVcY4K0k/GvhVu/CPUUrr+AwZ0+CmMy8uRHDpfP+MMBlRmI9WXIirIulBY52BRi3Qg==", "cliente"=>{"nome"=>"Luis", "cpf"=>"102.209.194-88", "fone"=>"81995369280"}, "commit"=>"Update Cliente", "id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "clientes" SET "nome" = ?, "updated_at" = ? WHERE "clientes"."id" = ?[0m  [["nome", "Luis"], ["updated_at", "2019-05-27 23:32:14.073944"], ["id", 1]]
+  [1m[35m (118.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/1
+Completed 302 Found in 129ms (ActiveRecord: 120.2ms)
+
+
+Started GET "/clientes/1" for ::1 at 2019-05-27 20:32:14 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (0.0ms)
+Completed 200 OK in 62ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:32:55 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.0ms)
+Completed 200 OK in 63ms (Views: 48.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes/1/edit" for ::1 at 2019-05-27 20:32:56 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (3.0ms)
+  Rendered clientes/edit.html.erb (15.9ms)
+Completed 200 OK in 79ms (Views: 62.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:33:07 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.0ms)
+Completed 200 OK in 65ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 20:33:09 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (3.0ms)
+  Rendered clientes/new.html.erb (16.0ms)
+Completed 200 OK in 74ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:33:16 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.0ms)
+Completed 200 OK in 62ms (Views: 46.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes/1/edit" for ::1 at 2019-05-27 20:33:17 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (3.0ms)
+  Rendered clientes/edit.html.erb (16.9ms)
+Completed 200 OK in 86ms (Views: 68.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:34:31 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.0ms)
+Completed 200 OK in 63ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 20:34:47 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (14.0ms)
+Completed 200 OK in 73ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:34:49 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (3.0ms)
+Completed 200 OK in 60ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/1/edit" for ::1 at 2019-05-27 20:36:33 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/edit.html.erb (16.0ms)
+Completed 200 OK in 85ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 20:36:40 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (14.0ms)
+Completed 200 OK in 76ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clientes" for ::1 at 2019-05-27 20:36:54 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GdCYlfNkTnn+zYIveuCQKaNoDXVcf5R06NlDb19VnuzYqaFd721o6F3wzHXPAqZGcDWjYDRQtPnM0VCdA5eBAA==", "cliente"=>{"nome"=>"Zuzu", "cpf"=>"12345678988", "fone"=>"81996359280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Zuzu"], ["cpf", "12345678988"], ["fone", "81996359280"], ["created_at", "2019-05-27 23:36:54.267299"], ["updated_at", "2019-05-27 23:36:54.267299"]]
+  [1m[35m (83.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/2
+Completed 302 Found in 95ms (ActiveRecord: 85.2ms)
+
+
+Started GET "/clientes/2" for ::1 at 2019-05-27 20:36:54 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:36:56 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (3.0ms)
+Completed 200 OK in 61ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/1/edit" for ::1 at 2019-05-27 20:37:12 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (3.0ms)
+  Rendered clientes/edit.html.erb (17.9ms)
+Completed 200 OK in 90ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/2/edit" for ::1 at 2019-05-27 20:39:59 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/edit.html.erb (14.0ms)
+Completed 200 OK in 76ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/1" for ::1 at 2019-05-27 20:40:01 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/2" for ::1 at 2019-05-27 20:40:03 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (2.0ms)
+Completed 200 OK in 66ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/1" for ::1 at 2019-05-27 20:49:44 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 61ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 20:57:11 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (3.0ms)
+  Rendered clientes/new.html.erb (16.9ms)
+Completed 200 OK in 98ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clientes" for ::1 at 2019-05-27 20:57:33 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/YTl7Sq++hFvkKxPS7OHC2cICg4QLq3gebiBFfk3aGY8/dwlNrfcgMyt4hX+UbFktFWkG3gBjW1dsJLnpfV3ig==", "cliente"=>{"nome"=>"Luis", "cpf"=>"102.209.194-88", "fone"=>"81995369280"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Luis"], ["cpf", "102.209.194-88"], ["fone", "81995369280"], ["created_at", "2019-05-27 23:57:33.287770"], ["updated_at", "2019-05-27 23:57:33.287770"]]
+  [1m[35m (80.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/3
+Completed 302 Found in 95ms (ActiveRecord: 86.6ms)
+
+
+Started GET "/clientes/3" for ::1 at 2019-05-27 20:57:33 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 68ms (Views: 50.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:57:36 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (3.0ms)
+Completed 200 OK in 60ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 20:58:03 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (15.0ms)
+Completed 200 OK in 76ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clientes" for ::1 at 2019-05-27 20:58:08 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OygJR+PBwqVkUBo9rgWJb0uvWpqK3NgxNkb5OENtGnv6UTCP/8jkNMdtVGcb578AmPL0j+Lz+LwSTurKH68Flw==", "cliente"=>{"nome"=>"", "cpf"=>"2020", "fone"=>"020"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", ""], ["cpf", "2020"], ["fone", "020"], ["created_at", "2019-05-27 23:58:08.598281"], ["updated_at", "2019-05-27 23:58:08.598281"]]
+  [1m[35m (208.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/4
+Started POST "/clientes" for ::1 at 2019-05-27 20:58:08 -0300
+Completed 302 Found in 220ms (ActiveRecord: 210.4ms)
+
+
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OygJR+PBwqVkUBo9rgWJb0uvWpqK3NgxNkb5OENtGnv6UTCP/8jkNMdtVGcb578AmPL0j+Lz+LwSTurKH68Flw==", "cliente"=>{"nome"=>"", "cpf"=>"2020", "fone"=>"020"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "clientes" ("nome", "cpf", "fone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", ""], ["cpf", "2020"], ["fone", "020"], ["created_at", "2019-05-27 23:58:08.834580"], ["updated_at", "2019-05-27 23:58:08.834580"]]
+  [1m[35m (74.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/5
+Completed 302 Found in 83ms (ActiveRecord: 75.2ms)
+
+
+Started GET "/clientes/5" for ::1 at 2019-05-27 20:58:08 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 58ms (Views: 45.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 20:58:10 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.0ms)
+Completed 200 OK in 59ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes/4" for ::1 at 2019-05-27 21:00:09 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCliente Load (0.0ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb
+  Rendered clientes/show.html.erb (1.0ms)
+Completed 200 OK in 62ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for ::1 at 2019-05-27 21:00:11 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb
+  [1m[36mCliente Load (1.0ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb (4.0ms)
+Completed 200 OK in 61ms (Views: 47.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clientes/new" for ::1 at 2019-05-27 21:00:26 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (2.0ms)
+  Rendered clientes/new.html.erb (14.6ms)
+Completed 200 OK in 91ms (Views: 63.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/clientes" for ::1 at 2019-05-27 21:00:29 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ONwtuh0lOKBmJrFY0hu//7PZ6Pewl2gkqygQNHGmi5P5pRRyASweMcUb/wJn+YmQYIRG4ti4SKmPIAPGLWSUfw==", "cliente"=>{"nome"=>"", "cpf"=>"adawdawd", "fone"=>"wadd"}, "commit"=>"Create Cliente"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering clientes/new.html.erb
+  Rendered clientes/_form.html.erb (3.0ms)
+  Rendered clientes/new.html.erb (15.0ms)
+Completed 200 OK in 67ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
