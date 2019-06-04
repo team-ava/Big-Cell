@@ -29,7 +29,6 @@ Feature: CRUD Cliente
     And Eu edito o nome dele para "Luis"
     Then Eu vejo que os dados foram alterados com sucesso
 
-
   Scenario:  remover cadastro com sucesso
     Given Eu abro a pagina de cadastro de cliente
     When Eu cadastrado o cliente com nome "Victor", cpf "102.209.194-88" e telefone "83995369280"

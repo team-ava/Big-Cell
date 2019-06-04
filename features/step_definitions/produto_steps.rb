@@ -41,7 +41,6 @@ Given("Eu abro a pagina inicial de cadastro de produto") do
   
   Then("Eu vejo uma mensagem de que o produto foi removido com sucesso") do
     expect(page).to have_content("Produto was successfully destroyed.")
-
   end
   
   Then("Eu vejo que o nome deve ser preenchido.") do
