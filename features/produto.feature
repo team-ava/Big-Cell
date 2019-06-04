@@ -12,12 +12,13 @@ Scenario: editar produto com sucesso
     Given Eu abro a pagina inicial de cadastro de produto
     When Eu crio o produto com nome "Xiaomi Mi 8 lite", com quantidade "1", com preco "1000.00" e com tipo "Celular"
     And Eu entro na pagina do produto com nome "Xiaomi Mi 8 lite"
-And Eu altero o preco para "1100.0"
+    And Eu altero o preco para "1100.0"
     Then Eu vejo uma mensagem de que a alteracao foi realizada com sucesso
 
 Scenario: remover produto com sucesso
     Given Eu abro a pagina inicial de cadastro de produto
     When Eu crio o produto com nome "Xiaomi Mi 8 lite", com quantidade "0", com preco "1000.00" e com tipo "Celular"
+    And Eu removo produto com nome "Xiaomi Mi 8 lite"
     Then Eu vejo uma mensagem de que o produto foi removido com sucesso
 
 Scenario: adicionar produto com nome vazio

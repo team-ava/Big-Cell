@@ -21,6 +21,14 @@ Given("Eu abro a pagina inicial de cadastro de produto") do
     #click_link "edit-#{nome}"
     page.all(:link,"Edit")[0].click
   end
+
+  When("Eu removo produto com nome {string}") do |string|
+    visit '/produtos'
+    expect(page).to have_content('Produtos')
+    #click_link "edit-#{nome}"
+    page.all(:link,"Destroy")[0].click
+  
+  end
   
   When("Eu altero o preco para {string}") do |preco|
     fill_in 'produto[preco]', :with => preco
@@ -32,7 +40,8 @@ Given("Eu abro a pagina inicial de cadastro de produto") do
   end
   
   Then("Eu vejo uma mensagem de que o produto foi removido com sucesso") do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content("Produto was successfully destroyed.")
+
   end
   
   Then("Eu vejo que o nome deve ser preenchido.") do
@@ -40,5 +49,5 @@ Given("Eu abro a pagina inicial de cadastro de produto") do
   end
   
   Then("Eu vejo uma mensagem de que o nome do produto esta com poucas letras") do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_content("Nome is too short (minimum is 4 characters)")
   end

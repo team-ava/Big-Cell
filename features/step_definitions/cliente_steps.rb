@@ -8,9 +8,19 @@
     fill_in 'cliente[nome]', :with => nome
     fill_in 'cliente[cpf]', :with => cpf
     fill_in 'cliente[fone]', :with => fone
-    click_button 'Create Cliente'    
+    click_button 'Create Cliente'  
+
   end
   
+  When("Eu cadastrado novamente o cliente com nome {string}, cpf {string} e telefone {string}") do |nome, cpf, fone|
+    visit '/clientes/new'    
+    fill_in 'cliente[nome]', :with => nome
+    fill_in 'cliente[cpf]', :with => cpf
+    fill_in 'cliente[fone]', :with => fone
+    click_button 'Create Cliente'  
+
+  end
+
   Then("Eu vejo que o cliente foi cadastrado com sucesso") do
     expect(page).to have_content("Cliente was successfully created.")
   end
@@ -42,13 +52,17 @@
   end
   
   When("Eu seleciono a opcao remover o cliente {string}") do |nome|
-    pending # Write code here that turns the phrase above into concrete actions
+    visit '/clientes'
+    expect(page).to have_content('Clientes')
+    #click_link "destroy-#{nome}"
+    page.all(:link,"Destroy")[0].click
   end
   
-  Then("Eu vejo uma mensagem informando que o cliente nao existe") do
-    pending # Write code here that turns the phrase above into concrete actions
+  Then("Eu vejo uma mensagem informando que o cliente ja foi cadastrado") do
+    expect(page).to have_content('Cpf has already been taken')
+
   end
 
-  Then("Eu vejo uma mensagem informando que o cliente ja foi cadastrado") do
-    pending # Write code here that turns the phrase above into concrete actions
+  Then("Eu vejo uma mensagem informando queo cliente foi removido com sucesso") do
+    expect(page).to have_content("Cliente was successfully destroyed.")
   end
