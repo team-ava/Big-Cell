@@ -12,6 +12,7 @@ Feature: CRUD Cliente
   Scenario: cadastrar cliente existente
     Given Eu abro a pagina de cadastro de cliente
     When Eu cadastrado o cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    And Eu cadastrado novamente o cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
     Then Eu vejo uma mensagem informando que o cliente ja foi cadastrado
 
 
@@ -28,8 +29,8 @@ Feature: CRUD Cliente
     And Eu edito o nome dele para "Luis"
     Then Eu vejo que os dados foram alterados com sucesso
 
-
-  Scenario:  remover cadastro inexistente
-    Given Eu abro a pagina de informacao de cliente
-    When Eu seleciono a opcao remover o cliente "Andre"
-    Then Eu vejo uma mensagem informando que o cliente nao existe
+  Scenario:  remover cadastro com sucesso
+    Given Eu abro a pagina de cadastro de cliente
+    When Eu cadastrado o cliente com nome "Victor", cpf "102.209.194-88" e telefone "83995369280"
+    And Eu seleciono a opcao remover o cliente "Victor"
+    Then Eu vejo uma mensagem informando queo cliente foi removido com sucesso
