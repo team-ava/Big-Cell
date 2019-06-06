@@ -25,7 +25,11 @@
 
 <p>
   <strong>Valor_total:</strong>
-  <%= @venda.valorTotal %>
+  <% Produto.all.each do |produto| %>
+    <% if produto.id === @venda.produtoId %>
+      <%= produto.preco + @venda.valorServico%>
+      <% end %>
+    <% end %>
 </p>
 
 <%= link_to 'Edit', edit_venda_path(@venda) %> |
