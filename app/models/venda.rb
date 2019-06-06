@@ -1,4 +1,4 @@
 class Venda < ApplicationRecord
-    belongs_to :cliente
-    belongs_to :produto
+    has_one :cliente
+    has_one :produto
 end
