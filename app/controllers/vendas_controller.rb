@@ -1,7 +1,5 @@
 class VendasController < ApplicationController
   before_action :set_venda, only: [:show, :edit, :update, :destroy]
-  before_action :set_produto, only: %i[edit update new]
-  before_action :set_cliente, only: %i[edit update new]
 
   # GET /vendas
   # GET /vendas.json
@@ -71,6 +69,6 @@ class VendasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venda_params
-      params.require(:venda).permit(:valorServico)
+      params.require(:venda).permit(:clienteId, :produtoId, :valorServico, :valorTotal)
     end
-end
+  end
