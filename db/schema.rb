@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_020731) do
+ActiveRecord::Schema.define(version: 2019_06_04_225457) do
 
   create_table "clientes", force: :cascade do |t|
     t.string "nome"
@@ -30,13 +30,12 @@ ActiveRecord::Schema.define(version: 2019_05_29_020731) do
   end
 
   create_table "vendas", force: :cascade do |t|
-    t.integer "produto_id"
-    t.integer "cliente_id"
+    t.integer "clienteId"
+    t.integer "produtoId"
     t.float "valorServico"
+    t.float "valorTotal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["produto_id"], name: "index_vendas_on_produto_id"
-    t.index ["cliente_id"], name: "index_vendas_on_cliente_id"
   end
 
 end
