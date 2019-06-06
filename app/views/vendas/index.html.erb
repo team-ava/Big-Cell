@@ -30,7 +30,11 @@
 
         <td><%= venda.valorServico %></td>
 
-        <td><%= venda.valorTotal %></td>
+        <td><% Produto.all.each do |produto| %>
+             <% if produto.id === venda.produtoId %>
+              <%= produto.preco + venda.valorServico%>
+            <% end %>
+          <% end %> </td>
 
         <td><%= link_to 'Show', venda %></td>
         <td><%= link_to 'Edit', edit_venda_path(venda) %></td>

@@ -17,18 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :Produto %>
+    <%= form.label :Produto %> 
     <%= form.collection_select(:produtoId, Produto.all, :id, :nome, prompt: true)%>
   </div>
 
   <div class="field">
     <%= form.label :Valor_servico %>
     <%= form.text_field :valorServico, id: :venda_valorServico %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Valor_total %>
-    <%= form.text_field :valorTotal, id: :venda_valorTotal %>
   </div>
 
   <div class="actions">
