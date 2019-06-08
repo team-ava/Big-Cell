@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <% Cliente.all.each do |cliente|%>
+    <% if cliente.id === @pedido.clienteId %>
+      <%= cliente.nome %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pedido.nome %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @pedido.descricao %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pedido.status %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
+<%= link_to 'Back', pedidos_path %>
