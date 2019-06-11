@@ -3,7 +3,7 @@ class Cliente < ApplicationRecord
     
     validates :cpf, presence: {message: 'é um campo obrigatório'}
     validates :cpf, uniqueness: {message: 'campo já existente'}
-    validate  :cpf, length: {minimum: 11,maximum: 14}
+    validates  :cpf, length: {minimum: 11,maximum: 14}
 
     validates :fone, presence: {message: 'é um campo obrigatório'}
     validates :fone, length: {minimum: 11,maximum: 11}
