@@ -7,6 +7,6 @@ class Pedido < ApplicationRecord
 
     validates :descricao, presence: { message: 'é um campo obrigatório' }
     
-    
+
     
 end
