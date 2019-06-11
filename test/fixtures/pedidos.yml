@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clienteId: 1
+  nome: MyString
+  descricao: MyString
+  status: false
+
+two:
+  clienteId: 2
+  nome: MyString
+  descricao: MyString
+  status: false

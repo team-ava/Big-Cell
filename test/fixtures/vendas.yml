@@ -2,12 +2,12 @@
 
 one:
   clienteId: 1
-  produtoId: 1
+  produtoId: 2
   valorServico: 1.5
   valorTotal: 1.5
 
 two:
-  clienteId: 1
-  produtoId: 1
+  clienteId: 3
+  produtoId: 4
   valorServico: 1.5
   valorTotal: 1.5
