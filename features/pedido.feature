@@ -3,27 +3,33 @@ Feature: CRUD Pedido
   I want criar, atualizar e relatar dados do sistema
   So that um novo pedido e realizado
 
-  Scenario: Abrir pedido
-    Given Eu abro a pagina de cadastro de pedido
-    When Eu abro um pedido com o cliente "Victor", o nome "Conserto Mi 8 Lite" e descricao "Problemas na camera".
+  Scenario: Cadastrar pedido com sucesso
+    Given Eu tenho um cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    And Eu abro a pagina de cadastro de pedido
+    When Eu abro um pedido com o nome "Conserto Mi 8 Lite", descricao "Problemas na camera" e com cliente "Victor Raffaele".
     Then Eu vejo que o pedido foi aberto com sucesso.
 
-  Scenario: Cancelar pedido
-    Given Eu abro a pagina de gerenciamento de pedido
-    When Eu seleciono a opcao de cancelamento do pedido do cliente "Victor"
+  Scenario: Cancelar pedido com sucesso 
+    Given Eu tenho um cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    And Eu abro a pagina de cadastro de pedido
+    When Eu abro um pedido com o nome "Conserto Mi 8 Lite", descricao "Problemas na camera" e com cliente "Victor Raffaele".
+    And Eu deleto o pedido
     Then Eu vejo que o pedido foi cancelado com sucesso.
 
-  Scenario: Mudar status
-    Given Eu abro a pagina de gerenciamento de pedido
-    When Eu seleciono a opcao de alterar status de "nao concluido" para "concluido"
+  Scenario: Mudar status com sucesso
+    Given Eu tenho um cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    And Eu abro a pagina de cadastro de pedido
+    When Eu abro um pedido com o nome "Conserto Mi 8 Lite", descricao "Problemas na camera" e com cliente "Victor Raffaele".
+    And Eu altero o status de pedido para concluido
     Then Eu vejo que o status foi alterado com sucesso.
 
-  Scenario: Abrir pedido com cliente inexistente
+  Scenario: Abrir pedido com cliente vazio
     Given Eu abro a pagina de cadastro de pedido
-    When Eu abro um pedido com o nome "Andre", com nome "Conserto Mi 8 Lite" e descricao "Poblema com o touch"
-    Then Eu vejo uma mensagem de que o cliente nao existe
+    When Eu abro um pedido com nome "Conserto Mi 8 Lite" e descricao "Poblema com o touch"
+    Then Eu vejo uma mensagem informando que o cliente referente ao pedido esta vazio.
 
   Scenario: Abrir pedido com nome vazio
-    Given Eu abro a pagina de cadastro de pedido
-    When Eu abro um pedido com o nome "Andre", com nome "" e descricao "Poblema com o touch"
-    Then Eu vejo uma mensagem de que nao foi possivel abrir o pedido sem nome
+    Given Eu tenho um cliente com nome "Victor Raffaele", cpf "102.209.194-88" e telefone "83995369280"
+    And Eu abro a pagina de cadastro de pedido
+    When Eu abro um pedido com o nome "", descricao "Problemas na camera" e com cliente "Victor Raffaele".
+    Then Eu vejo uma mensagem informando nome esta vazio
