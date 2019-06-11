@@ -22,12 +22,10 @@ Feature: CRUD Cliente
     Then Eu vejo que o nome do cliente deve ser preenchido
 
 
-  Scenario: alterar dados cliente
+  Scenario: cadastrar clente com cpf invalido
     Given Eu abro a pagina de cadastro de cliente
-    When Eu cadastro o cliente com nome "Victor", cpf "102.209.194-88" e telefone "83995369280"
-    And Eu vou na pagina de edicao de "Victor"
-    And Eu edito o nome dele para "Luis"
-    Then Eu vejo que os dados foram alterados com sucesso
+    When Eu cadastro o cliente com nome "Victor", cpf "" e telefone "83995369280" 
+    Then Eu vejo que o cpf do cliente deve ser preenchido
 
   Scenario:  remover cadastro com sucesso
     Given Eu abro a pagina de cadastro de cliente
