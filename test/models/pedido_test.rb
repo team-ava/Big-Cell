@@ -8,11 +8,11 @@ class PedidoTest < ActiveSupport::TestCase
   
   test 'Pedido nao pode ser criado sem nome' do
     pedidoTeste = Pedido.new(clienteId: 5, nome: '', descricao: "Tela com defeito", status: false)
-    assert pedidoTeste.save, "Nome do pedido nao informado."
+    assert_not pedidoTeste.save, "Nome do pedido nao informado."
   end
 
   test 'Pedido nao pode ser criado sem descricao' do
     pedidoTeste = Pedido.new(clienteId: 5, nome: 'Concerto Mi 8 Lite', descricao: "", status: false)
-    assert pedidoTeste.save, "Descricao do pedido nao informada."
+    assert_not pedidoTeste.save, "Descricao do pedido nao informada."
   end
 end

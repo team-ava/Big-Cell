@@ -8,11 +8,11 @@ class ClienteTest < ActiveSupport::TestCase
 
   test 'Cliente nao deve ser criado sem nome' do
     clienteTeste1 = Cliente.new(nome: '', cpf: '10220919488', fone: '81995329874')
-    assert clienteTeste1.save, "Nome do cliente nao informado."
+    assert_not clienteTeste1.save, "Nome do cliente nao informado."
   end
 
   test 'Cliente nao deve ser criado com cpf incorreto' do
     clienteTeste2 = Cliente.new(nome: 'Victor', cpf: '10254', fone: '81995329874')
-    assert clienteTeste2.save, "Cliente com CPF incorreto."
+    assert_not clienteTeste2.save, "Cliente com CPF incorreto."
   end
 end
