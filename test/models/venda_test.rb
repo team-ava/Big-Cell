@@ -8,11 +8,11 @@ class VendaTest < ActiveSupport::TestCase
 
   test 'Venda nao deve ser criada sem produto' do
     vendaTeste = Venda.new(clienteId: 5, produtoId: "", valorServico: 1.5)
-    assert vendaTeste.save, "Produto de venda nao informado."
+    assert_not vendaTeste.save, "Produto de venda nao informado."
   end
 
   test 'Venda nao deve ser criada sem cliente' do
     vendaTeste = Venda.new(clienteId: "", produtoId: 3, valorServico: 1.5)
-    assert vendaTeste.save, "Cliente de venda nao informado."
+    assert_not vendaTeste.save, "Cliente de venda nao informado."
   end
 end
