@@ -1,0 +1,61 @@
+current directory: /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.10/ext/msgpack
+/home/victorraffaele/.rvm/rubies/ruby-2.3.3/bin/ruby -r ./siteconf20190619-8259-16e2yg8.rb extconf.rb
+checking for ruby/st.h... yes
+checking for st.h... yes
+checking for rb_str_replace() in ruby.h... yes
+checking for rb_intern_str() in ruby.h... yes
+checking for rb_sym2str() in ruby.h... yes
+checking for rb_str_intern() in ruby.h... yes
+checking for rb_block_lambda() in ruby.h... yes
+checking for rb_hash_dup() in ruby.h... yes
+checking for rb_hash_clear() in ruby.h... yes
+creating Makefile
+
+current directory: /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.10/ext/msgpack
+make "DESTDIR=" clean
+
+current directory: /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.10/ext/msgpack
+make "DESTDIR="
+compiling extension_value_class.c
+compiling unpacker.c
+compiling buffer.c
+compiling rmem.c
+compiling unpacker_ext_registry.c
+compiling packer_class.c
+compiling factory_class.c
+compiling buffer_class.c
+buffer_class.c: In function ‘Buffer_read_all’:
+buffer_class.c:335:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         out = argv[1];
+         ~~~~^~~~~~~~~
+buffer_class.c:337:5: note: here
+     case 1:
+     ^~~~
+buffer_class.c: In function ‘Buffer_read’:
+buffer_class.c:381:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         out = argv[1];
+         ~~~~^~~~~~~~~
+buffer_class.c:383:5: note: here
+     case 1:
+     ^~~~
+compiling packer.c
+In file included from packer.h:22:0,
+                 from packer.c:19:
+packer.c: In function ‘msgpack_packer_write_other_value’:
+packer_ext_registry.h:129:9: warning: ‘lookup_class’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+         rb_hash_aset(pkrg->cache, lookup_class, superclass_type);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+packer_ext_registry.h:85:11: note: ‘lookup_class’ was declared here
+     VALUE lookup_class;
+           ^~~~~~~~~~~~
+compiling rbinit.c
+compiling packer_ext_registry.c
+compiling unpacker_class.c
+unpacker_class.c:219:14: warning: ‘Unpacker_peek_next_type’ defined but not used [-Wunused-function]
+ static VALUE Unpacker_peek_next_type(VALUE self)
+              ^~~~~~~~~~~~~~~~~~~~~~~
+linking shared-object msgpack/msgpack.so
+
+current directory: /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.10/ext/msgpack
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20190619-8259-1tnc18g/msgpack
