@@ -1,0 +1,5 @@
+current directory: /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/childprocess-1.0.1/ext
+/home/victorraffaele/.rvm/rubies/ruby-2.3.3/bin/ruby mkrf_conf.rb
+
+current directory: /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/childprocess-1.0.1/ext
+/home/victorraffaele/.rvm/rubies/ruby-2.3.3/bin/ruby -rrubygems /home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/gems/rake-12.3.2/exe/rake RUBYARCHDIR=/home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/childprocess-1.0.1 RUBYLIBDIR=/home/victorraffaele/ES/Big-Cell/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/childprocess-1.0.1
