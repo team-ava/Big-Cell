@@ -1,5 +1,15 @@
  language: ruby
 rvm:
  - 2.3.3
- - jruby
 
+script: 
+- bundle exec rake db:create:all
+- bundle exec rake db:migrate RAILS_ENV=test
+- ruby -Itest test/models/cliente_test.rb
+- ruby -Itest test/models/pedido_test.rb
+- ruby -Itest test/models/produto_test.rb
+- ruby -Itest test/models/venda_test.rb
+- ruby -S bundle exec cucumber --profile default
+
+services:
+ - sqlite3
